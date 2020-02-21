@@ -1,0 +1,14 @@
+[Unit]
+Description=notification sender service
+After=multi-user.target
+StartLimitIntervalSec=5
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/bin/python /home/pi/Codes/bootUpNotification.py
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
